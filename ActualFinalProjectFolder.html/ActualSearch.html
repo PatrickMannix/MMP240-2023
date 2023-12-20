@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Financial Aid</title>
+
+    <style>
+      .h1{
+          font-size: 2em;
+      }
+      @media print (max-width:768px, orientation: portrait) {
+        .h1{
+          font-size: 1.5em;
+          border-bottom: solid 1px 
+  #fff;
+        flex-direction: column
+          color: black;
+        }
+}
+ 
+
+
+    /* Add CSS code here */
+
+    ul{              /* resetting ul defaults padding and margins */
+      padding:0;
+      margin:0;
+    }
+
+    #wrapper{
+      max-width:1200px;
+      margin:0 auto;
+      font-family: sans-serif;
+    }
+    nav{
+      background-color: red;
+      padding: 1em;
+    }
+    nav li {
+      display: inline;
+      padding:0 2em;
+      border-right: solid 1px #fff;
+    }
+
+    nav li:last-child{
+      border:none;
+    }
+
+    nav li a{
+      text-decoration: none;
+      color: black;
+    }
+
+    nav li a:hover{
+      text-decoration: underline;
+    }
+
+
+
+    </style>
+
+  </head>
+  <body>
+    <div id="wrapper">
+
+      <div class="flex-container">
+
+        <div class="flex-item lead">
+          
+          <h1>Design For Cuny Undergraduates</h1>
+          <p>Search by: Discipline, Degree, Borough</p>
+        </div>
+
+        <div class="flex-item card1">
+          <img src="https://th.bing.com/th/id/OIP.2d5Nb_WYusMDMkR4ri3E_QAAAA?rs=1&pid=ImgDetMain" alt="BMCC_Plaza" class="img-responsive">
+          <p>CUNY is a abbreviation for City University New York College and for a University it won two awards from Emmy awards of 63rd New York, Cuny humbly welcomes newcomers applenty. CTTV and NYC College Technology earning honors of Saturdays Ceremony CTTV awaed brings in 21 total members of Emmys station awarding National Academy of Traditional Arts and Sciences New York Chapter... Read More in About Cuny.</p>
+        </div>
+      <nav>
+        <ul>
+          <li>><a href="ActualCunyDesign.html">Cuny Design</a></li>
+          <li><a href="AboutCuny.html">About Cuny</a></li>
+          <li><a href="FinancialAid.html">Financial Aid</a></li>
+          <li><a href="Apply.html">Apply</a></li>
+          <li><a href="Search.html">Search</a></li>
+          </li>
+        </ul>
+      </nav>
+    </div>
+      <h2>~Cuny - Search~</h2>
+      <form name="searchform" action="CFSearchToolController" onsubmit="return populateSelectedNames();" method="post">
+
+        <!--hidden field to store the value of selected term-->
+        <input type="hidden" id="selectedInstitutions" name="selectedInstName">
+          
+        <fieldset>
+        
+         <!--  <legend><font size='4'><strong>Search for Classes</strong></font> &nbsp;&nbsp; <i class="fa fa-search" style="font-size:20px"></i></legend>-->
+         <legend><font size="4"><strong>Search for Classes</strong></font></legend>
+         <br>
+        
+        <!-- select is commented for now...bf
+        <div>
+        <input type="checkbox" id="magicpowerpd" name="chk[]" onclick="checkAll(this)"><label id="inst_lbel" for="magicpowerpd">Select All Institutions</label>
+        </div>
+        -->
+        
+              
+           
+         <legend><span class="form-text-bold">Institution</span></legend>
+        
+        <ul class="checkboxes">
+             <li><label class="container"><input type="checkbox" name="inst_selection" value="BAR01" id="BAR01"><label for="BAR01">Baruch College</label><span class="checkmark"></span></label></li><li><label class="container"><input type="checkbox" name="inst_selection" value="BMC01" id="BMC01"><label for="BMC01">Borough of Manhattan CC</label><span class="checkmark"></span></label></li><li><label class="container"><input type="checkbox" name="inst_selection" value="BCC01" id="BCC01"><label for="BCC01">Bronx CC</label><span class="checkmark"></span></label></li><li><label class="container"><input type="checkbox" name="inst_selection" value="BKL01" id="BKL01"><label for="BKL01">Brooklyn College</label><span class="checkmark"></span></label></li><li><label class="container"><input type="checkbox" name="inst_selection" value="CTY01" id="CTY01"><label for="CTY01">City College</label><span class="checkmark"></span></label></li><li><label class="container"><input type="checkbox" name="inst_selection" value="CSI01" id="CSI01"><label for="CSI01">College of Staten Island</label><span class="checkmark"></span></label></li><li><label class="container"><input type="checkbox" name="inst_selection" value="GRD01" id="GRD01"><label for="GRD01">Graduate Center</label><span class="checkmark"></span></label></li><li><label class="container"><input type="checkbox" name="inst_selection" value="NCC01" id="NCC01"><label for="NCC01">Guttman CC</label><span class="checkmark"></span></label></li><li><label class="container"><input type="checkbox" name="inst_selection" value="HOS01" id="HOS01"><label for="HOS01">Hostos CC</label><span class="checkmark"></span></label></li><li><label class="container"><input type="checkbox" name="inst_selection" value="HTR01" id="HTR01"><label for="HTR01">Hunter College</label><span class="checkmark"></span></label></li><li><label class="container"><input type="checkbox" name="inst_selection" value="JJC01" id="JJC01"><label for="JJC01">John Jay College</label><span class="checkmark"></span></label></li><li><label class="container"><input type="checkbox" name="inst_selection" value="KCC01" id="KCC01"><label for="KCC01">Kingsborough CC</label><span class="checkmark"></span></label></li><li><label class="container"><input type="checkbox" name="inst_selection" value="LAG01" id="LAG01"><label for="LAG01">LaGuardia CC</label><span class="checkmark"></span></label></li><li><label class="container"><input type="checkbox" name="inst_selection" value="LEH01" id="LEH01"><label for="LEH01">Lehman College</label><span class="checkmark"></span></label></li><li><label class="container"><input type="checkbox" name="inst_selection" value="MHC01" id="MHC01"><label for="MHC01">Macaulay Honors College</label><span class="checkmark"></span></label></li><li><label class="container"><input type="checkbox" name="inst_selection" value="MEC01" id="MEC01"><label for="MEC01">Medgar Evers College</label><span class="checkmark"></span></label></li><li><label class="container"><input type="checkbox" name="inst_selection" value="NYT01" id="NYT01"><label for="NYT01">NYC College of Technology</label><span class="checkmark"></span></label></li><li><label class="container"><input type="checkbox" name="inst_selection" value="QNS01" id="QNS01"><label for="QNS01">Queens College</label><span class="checkmark"></span></label></li><li><label class="container"><input type="checkbox" name="inst_selection" value="QCC01" id="QCC01"><label for="QCC01">Queensborough CC</label><span class="checkmark"></span></label></li><li><label class="container"><input type="checkbox" name="inst_selection" value="SOJ01" id="SOJ01"><label for="SOJ01">School of Journalism</label><span class="checkmark"></span></label></li><li><label class="container"><input type="checkbox" name="inst_selection" value="SLU01" id="SLU01"><label for="SLU01">School of Labor&amp;Urban Studies</label><span class="checkmark"></span></label></li><li><label class="container"><input type="checkbox" name="inst_selection" value="LAW01" id="LAW01"><label for="LAW01">School of Law</label><span class="checkmark"></span></label></li><li><label class="container"><input type="checkbox" name="inst_selection" value="MED01" id="MED01"><label for="MED01">School of Medicine</label><span class="checkmark"></span></label></li><li><label class="container"><input type="checkbox" name="inst_selection" value="SPS01" id="SPS01"><label for="SPS01">School of Professional Studies</label><span class="checkmark"></span></label></li><li><label class="container"><input type="checkbox" name="inst_selection" value="SPH01" id="SPH01"><label for="SPH01">School of Public Health</label><span class="checkmark"></span></label></li><li><label class="container"><input type="checkbox" name="inst_selection" value="YRK01" id="YRK01"><label for="YRK01">York College</label><span class="checkmark"></span></label></li><li><label class="container"><input type="checkbox" name="chk[]" id="magicpowerpd" onclick="checkAll(this)"><label id="inst_lbel" for="magicpowerpd"><strong>Select All Institutions</strong></label><span class="checkmark"></span></label></li>
+          
+        </ul>
+        
+        
+        </fieldset>
+        
+        <fieldset>
+        
+         <legend><span class="form-text-bold"><label for="t_pd">Term</label></span></legend>
+                    <!--hidden field to store the value of selected term-->
+              <input type="hidden" id="selectedTerm" name="selectedTermName">
+                    <select name="term_value" id="t_pd" class="form-term-display">
+                <option value=""></option>
+                
+                <option value="1246">2024 Summer Term</option>
+        <option value="1242">2024 Spring Term</option>
+        <option value="1239">2023 Fall Term</option>
+        
+               
+                    </select>
+        </fieldset>
+        
+        <div id="spin"></div>
+        <br>
+        <br>
+        <br>
+        <div class="submit_buttons">
+          <input type="submit" name="next_btn" id="search_new_spin" class="next_floated_button" value="Next" title="Next">
+        </div>
+        
+        <div class="submit_buttons">
+          <input type="submit" name="clear_btn_main" class="floated_button_clear_1" value="Clear" title="Clear">
+        </div>
+        
+         </form>
+  </body>
+</html>
